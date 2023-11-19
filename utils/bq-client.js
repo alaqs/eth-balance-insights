@@ -1,6 +1,8 @@
 import { request } from 'graphql-request';
 import { addressInsightsGql } from './queries.js';
 
+const BQ_API_KEY = '';
+
 export class BitQueryClient {
    url = "https://graphql.bitquery.io";
 
@@ -10,13 +12,13 @@ export class BitQueryClient {
          document: addressInsightsGql, 
          requestHeaders: {
             'Content-Type': 'application/json',
-            'X-API-KEY': ''
+            'X-API-KEY': BQ_API_KEY
          },
          variables: {
             address
          }
       });
 
-      console.log(JSON.stringify(result));
+      return result.ethereum.address[0];
    }
 }

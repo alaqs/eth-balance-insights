@@ -1,23 +1,22 @@
 import parseArgs from "minimist";
 
-const HELP_LOG = `E.g. invocation: "node main.js <ethereum-address>"`;
-const ADDRESS_IDX = 2;
+const HELP_LOG = `E.g. invocation: "node main.js --address=<ethereum-address>"`;
 
 export const getAddressInArg = () => {
-  const args = parseArgs(process.argv);
+  const args = parseArgs(process.argv, {string: ["address"]});
   
   if (args.help) {
     console.log(HELP_LOG);
     process.exit();
   }
 
-  const address = args["_"][ADDRESS_IDX];
+  const address = args.address;
 
   if (!address) {
     console.error("Missing error argument.", HELP_LOG)
     process.exit();
   }
   
-  console.log(`processing address: ${address}`);
+  console.log(`Processing address: ${address}`);
   return address;
 }
