@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Node script to surface ethereum address insights",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/alaqs/eth-balance-insights/issues"
   },
-  "homepage": "https://github.com/alaqs/eth-balance-insights#readme"
+  "homepage": "https://github.com/alaqs/eth-balance-insights#readme",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
 }
