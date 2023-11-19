@@ -1,6 +1,7 @@
 import { request } from 'graphql-request';
 import { addressInsightsGql } from './queries.js';
 
+// paste BQ api key
 const BQ_API_KEY = '';
 
 export class BitQueryClient {
